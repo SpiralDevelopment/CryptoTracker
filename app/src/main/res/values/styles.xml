@@ -1,0 +1,62 @@
+<resources>
+
+    <style name="Widget.Custom.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:paddingEnd">8dp</item>
+        <item name="contentInsetStart">16dp</item>
+        <item name="contentInsetStartWithNavigation">64dp</item>
+        <item name="android:popupTheme">@style/AppTheme.PopupTheme</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Custom.Toolbar</item>
+        <item name="android:textColorSecondary">@color/default_text_color</item>
+    </style>
+
+
+    <style name="TextAppearance.Custom.BottomNav" parent="@style/TextAppearance.MaterialComponents.Caption">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H1" parent="@style/TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">@dimen/heading_text_size</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H1.Bold" parent="@style/TextAppearance.Custom.H1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H2" parent="@style/TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">@dimen/heading2_text_size</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H2.Bold" parent="@style/TextAppearance.Custom.H2">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H3" parent="@style/TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textSize">@dimen/heading3_text_size</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H3.Bold" parent="@style/TextAppearance.Custom.H3">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Custom.Default" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <style name="TextAppearance.Custom.Default.Bold" parent="@style/TextAppearance.Custom.Default">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Custom.Default.Italic" parent="@style/TextAppearance.Custom.Default">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextAppearance.Custom.Toolbar" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/toolbar_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

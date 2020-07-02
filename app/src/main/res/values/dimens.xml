@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_start_margin">15dp</dimen>
+    <dimen name="large_start_margin">20dp</dimen>
+    <dimen name="large_top_margin">15dp</dimen>
+    <dimen name="largest_top_margin">50dp</dimen>
+    <dimen name="default_top_margin">5dp</dimen>
+    <dimen name="default_bottom_margin">5dp</dimen>
+    <dimen name="large_bottom_margin">15dp</dimen>
+    <dimen name="small_margin">2dp</dimen>
+    <dimen name="medium_margin">30dp</dimen>
+
+    <dimen name="heading_text_size">26sp</dimen>
+    <dimen name="heading2_text_size">22sp</dimen>
+    <dimen name="heading3_text_size">18sp</dimen>
+    <dimen name="default_text_size">14sp</dimen>
+    <dimen name="toolbar_text_size">24sp</dimen>
+</resources>

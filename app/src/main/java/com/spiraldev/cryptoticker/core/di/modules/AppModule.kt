@@ -2,6 +2,7 @@ package com.spiraldev.cryptoticker.core.di.modules
 
 import android.app.Application
 import android.content.Context
+import com.spiraldev.cryptoticker.data.local.database.CoinsDatabase
 import com.spiraldev.cryptoticker.data.local.prefs.PreferenceStorage
 import com.spiraldev.cryptoticker.data.local.prefs.SharedPreferenceStorage
 import dagger.Module
@@ -21,4 +22,8 @@ class AppModule{
     @Provides
     @Singleton
     fun providePreferenceStorage(context: Context): PreferenceStorage = SharedPreferenceStorage(context)
+
+    @Provides
+    @Singleton
+    fun provideDatabase(context: Context): CoinsDatabase = CoinsDatabase.buildDatabase(context)
 }

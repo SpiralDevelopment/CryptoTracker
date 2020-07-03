@@ -7,4 +7,9 @@
     <string name="favourites">Favourites</string>
     <string name="settings">Settings</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="coins_list_error">Failed to fetch coins list. Please try again.</string>
+
+    <string name="no_favourites">You have not set any favourites</string>
+    <string name="added_to_favourite">%1$s added to favourite</string>
+    <string name="removed_to_favourite">%1$s removed from favourite</string>
 </resources>

@@ -9,30 +9,41 @@ import com.spiraldev.cryptoticker.core.common.BaseViewModel
 import com.spiraldev.cryptoticker.data.repository.coinsList.CoinsListRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 import com.spiraldev.cryptoticker.api.Result
+import com.spiraldev.cryptoticker.data.local.database.CoinsListEntity
+import timber.log.Timber
 
-class CoinListViewModel @Inject constructor(private val coinsListRepository: CoinsListRepository) :
+class CoinListViewModel @Inject constructor(private val repository: CoinsListRepository) :
     BaseViewModel() {
 
-    val coinsListData = MutableLiveData<List<Coin>>()
+    val coinsListData = repository.allCoinsLD
 
-    fun loadCoinsList(targetCur: String) {
+    //LiveData to show add/remove status as toast message
+    private val _favouriteStock = MutableLiveData<CoinsListEntity?>()
+    val favouriteStock: LiveData<CoinsListEntity?> = _favouriteStock
+
+
+    fun isListEmpty(): Boolean {
+        return coinsListData.value?.isEmpty() ?: true
+    }
+
+    fun loadCoinsFromApi(targetCur: String = "usd") {
+        if (repository.loadData()) {
+            viewModelScope.launch(Dispatchers.IO) {
+                _isLoading.postValue(true)
+                repository.coinsList(targetCur)
+                _isLoading.postValue(false)
+            }
+        }
+    }
+
+    fun updateFavouriteStatus(symbol: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            _isLoading.postValue(true)
-            val result = coinsListRepository.coinsList(targetCur)
-            _isLoading.postValue(false)
-
+            val result = repository.updateFavouriteStatus(symbol)
             when (result) {
-                is Result.Success -> {
-                    if (result.succeeded) {
-                        coinsListData.postValue(result.data)
-                    } else {
-                        Timber.d("Error")
-                    }
-                }
-                is Result.Error -> Timber.d("Error")
+                is Result.Success -> _favouriteStock.postValue(result.data)
+                is Result.Error -> _toastError.postValue(result.message)
             }
         }
     }

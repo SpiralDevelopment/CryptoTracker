@@ -5,5 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class Coin(
     val symbol: String?,
     val name: String?,
-    @SerializedName("current_price") val price: Double?
+    val image: String?,
+    @SerializedName("current_price") val price: Double?,
+    @SerializedName("price_change_percentage_24h") val changePercent: Double?
 )

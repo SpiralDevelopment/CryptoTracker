@@ -48,7 +48,7 @@ MVVM provides a clear separation of concern and has great support in Android SDK
 
 ## Variations
 
-There are 2 versions of this project one uses [dagger-android][6] for dependency injection, another one uses [dagger-hilt][11]. You see that dependency injection with dagger-hilt is simpler.
+There are 2 versions of this project. One uses [dagger-android][6] for dependency injection, another one uses [dagger-hilt][11]. You see that dependency injection with dagger-hilt is simpler.
 
 |     Sample     | Description |
 | ------------- | ------------- |

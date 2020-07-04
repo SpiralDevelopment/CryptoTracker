@@ -15,11 +15,13 @@ import com.spiraldev.cryptoticker.util.UIHelper
 import com.spiraldev.cryptoticker.util.extensions.doOnChange
 import com.spiraldev.cryptoticker.util.extensions.dollarString
 import com.spiraldev.cryptoticker.util.extensions.emptyIfNull
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_project_profile.*
 
+@AndroidEntryPoint
 class ProjectProfileActivity : BaseActivity() {
 
-    private val viewModel by viewModels<ProjectProfileViewModel> { viewModelFactory }
+    private val viewModel: ProjectProfileViewModel by viewModels()
     private lateinit var binding: ActivityProjectProfileBinding
 
     private var symbol: String? = null

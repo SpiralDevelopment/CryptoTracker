@@ -10,12 +10,13 @@ import com.spiraldev.cryptoticker.core.common.MainNavigationFragment
 import com.spiraldev.cryptoticker.util.ThemeHelper
 import com.spiraldev.cryptoticker.util.ThemeMode
 import com.spiraldev.cryptoticker.util.extensions.doOnChange
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
-
+@AndroidEntryPoint
 class SettingsFragment : MainNavigationFragment() {
 
-    private val viewModel by viewModels<SettingsViewModel> { viewModelFactory }
+    private val viewModel: SettingsViewModel by viewModels()
     private lateinit var binding: FragmentSettingsBinding
 
     override fun onCreateView(

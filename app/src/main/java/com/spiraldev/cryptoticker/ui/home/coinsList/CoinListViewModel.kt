@@ -1,5 +1,6 @@
 package com.spiraldev.cryptoticker.ui.home.coinsList
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -14,7 +15,7 @@ import com.spiraldev.cryptoticker.api.Result
 import com.spiraldev.cryptoticker.data.local.database.CoinsListEntity
 import timber.log.Timber
 
-class CoinListViewModel @Inject constructor(private val repository: CoinsListRepository) :
+class CoinListViewModel @ViewModelInject constructor(private val repository: CoinsListRepository) :
     BaseViewModel() {
 
     val coinsListData = repository.allCoinsLD

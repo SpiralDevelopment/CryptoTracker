@@ -1,22 +1,27 @@
-package com.spiraldev.cryptoticker.core.di.modules
+package com.spiraldev.cryptoticker.core.di
 
+import android.content.Context
 import com.spiraldev.cryptoticker.api.ApiInterface
-import com.spiraldev.cryptoticker.util.Constants.BASE_URL
+import com.spiraldev.cryptoticker.data.local.database.CoinsDatabase
+import com.spiraldev.cryptoticker.data.local.prefs.PreferenceStorage
+import com.spiraldev.cryptoticker.data.local.prefs.SharedPreferenceStorage
+import com.spiraldev.cryptoticker.util.Constants
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
-
 @Module
-class ApiModule() {
+@InstallIn(ApplicationComponent::class)
+class ApplicationModule {
 
     @Provides
     @Singleton
@@ -49,7 +54,7 @@ class ApiModule() {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .baseUrl(BASE_URL)
+            .baseUrl(Constants.BASE_URL)
             .client(okHttpClient)
             .build()
     }
@@ -59,4 +64,14 @@ class ApiModule() {
     fun provideApiClient(retrofit: Retrofit): ApiInterface {
         return retrofit.create(ApiInterface::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun providesDatabase(@ApplicationContext context: Context): CoinsDatabase =
+        CoinsDatabase.buildDatabase(context)
+
+    @Provides
+    @Singleton
+    fun providePreferenceStorage(@ApplicationContext context: Context): PreferenceStorage = SharedPreferenceStorage(context)
+
 }

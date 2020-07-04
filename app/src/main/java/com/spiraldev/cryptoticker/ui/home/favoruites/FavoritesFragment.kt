@@ -17,11 +17,12 @@ import com.spiraldev.cryptoticker.util.Constants
 import com.spiraldev.cryptoticker.util.extensions.doOnChange
 import kotlinx.android.synthetic.main.fragment_favorites.*
 import com.spiraldev.cryptoticker.ui.home.favoruites.FavoritesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FavoritesFragment : MainNavigationFragment(), OnItemClickCallback {
 
-    private val viewModel by viewModels<FavoritesViewModel> { viewModelFactory }
+    private val viewModel: FavoritesViewModel by viewModels()
     private lateinit var binding: FragmentFavoritesBinding
     private var favouritesAdapter = CoinsListAdapter(this)
 

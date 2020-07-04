@@ -1,5 +1,6 @@
 package com.spiraldev.cryptoticker.ui.projectProfile
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -10,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.spiraldev.cryptoticker.api.Result
 
-class ProjectProfileViewModel @Inject constructor(private val repository: ProjectProfileRepository) :
+class ProjectProfileViewModel @ViewModelInject constructor(private val repository: ProjectProfileRepository) :
     BaseViewModel() {
 
     fun projectBySymbol(symbol: String) = repository.projectBySymbol(symbol)

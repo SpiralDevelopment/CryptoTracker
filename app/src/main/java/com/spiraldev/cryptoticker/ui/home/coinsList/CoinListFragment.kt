@@ -15,12 +15,13 @@ import com.spiraldev.cryptoticker.core.common.MainNavigationFragment
 import com.spiraldev.cryptoticker.ui.projectProfile.ProjectProfileActivity
 import com.spiraldev.cryptoticker.util.Constants
 import com.spiraldev.cryptoticker.util.extensions.doOnChange
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_list.*
 
-
+@AndroidEntryPoint
 class CoinListFragment : MainNavigationFragment(), OnItemClickCallback {
 
-    private val viewModel by viewModels<CoinListViewModel> { viewModelFactory }
+    private val viewModel: CoinListViewModel by viewModels()
     private lateinit var binding: FragmentListBinding
     private var coinsListAdapter = CoinsListAdapter(this)
 

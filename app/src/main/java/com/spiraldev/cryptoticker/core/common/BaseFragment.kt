@@ -1,10 +1,7 @@
 package com.spiraldev.cryptoticker.core.common
 
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import com.spiraldev.cryptoticker.core.ViewModelFactory
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import androidx.fragment.app.Fragment
 
 
 interface InitViews {
@@ -12,10 +9,7 @@ interface InitViews {
     fun observeViewModel()
 }
 
-abstract class BaseFragment : DaggerFragment(), InitViews {
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+abstract class BaseFragment : Fragment(), InitViews {
 
     fun showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(

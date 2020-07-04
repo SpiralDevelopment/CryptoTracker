@@ -13,13 +13,14 @@ import com.spiraldev.cryptoticker.core.common.BaseActivity
 import com.spiraldev.cryptoticker.core.common.NavigationHost
 import com.spiraldev.cryptoticker.util.ThemeHelper
 import com.spiraldev.cryptoticker.util.ThemeMode
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+@AndroidEntryPoint
 class HomeActivity : BaseActivity(),
     NavigationHost {
 
-    private val viewModel by viewModels<HomeActivityViewModel> { viewModelFactory }
+    private val viewModel: HomeActivityViewModel by viewModels()
 
     companion object {
         private val TOP_LEVEL_DESTINATIONS = setOf(

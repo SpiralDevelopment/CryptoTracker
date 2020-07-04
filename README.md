@@ -1,4 +1,4 @@
-# CryptoTicker
+# CryptoTracker
 
 > Crypto tracker app
 

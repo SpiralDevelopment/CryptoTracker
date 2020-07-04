@@ -13,4 +13,7 @@
     <color name="window_background">#ffffff</color>
     <color name="card_view_background">#ffffff</color>
     <color name="grey">#9e9e9e</color>
+
+    <color name="line_chart_text_color">#000000</color>
+    <color name="line_chart_color">#303f9f</color>
 </resources>

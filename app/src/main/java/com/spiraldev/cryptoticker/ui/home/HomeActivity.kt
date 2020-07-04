@@ -1,6 +1,7 @@
-package com.spiraldev.cryptoticker.ui
+package com.spiraldev.cryptoticker.ui.home
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -9,10 +10,16 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.spiraldev.cryptoticker.R
 import com.spiraldev.cryptoticker.core.common.BaseActivity
+import com.spiraldev.cryptoticker.core.common.NavigationHost
+import com.spiraldev.cryptoticker.util.ThemeHelper
+import com.spiraldev.cryptoticker.util.ThemeMode
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class HomeActivity : BaseActivity(), NavigationHost {
+class HomeActivity : BaseActivity(),
+    NavigationHost {
+
+    private val viewModel by viewModels<HomeActivityViewModel> { viewModelFactory }
 
     companion object {
         private val TOP_LEVEL_DESTINATIONS = setOf(
@@ -28,10 +35,13 @@ class HomeActivity : BaseActivity(), NavigationHost {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ThemeHelper.applyTheme(if (viewModel.isDarkModeOn()) ThemeMode.Dark else ThemeMode.Light)
+
         setContentView(R.layout.activity_main)
 
         navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.homeNavHostFragment) as? NavHostFragment ?: return
+            supportFragmentManager.findFragmentById(R.id.homeNavHostFragment) as? NavHostFragment
+                ?: return
 
         navController = findNavController(R.id.homeNavHostFragment)
         appBarConfiguration = AppBarConfiguration(TOP_LEVEL_DESTINATIONS)

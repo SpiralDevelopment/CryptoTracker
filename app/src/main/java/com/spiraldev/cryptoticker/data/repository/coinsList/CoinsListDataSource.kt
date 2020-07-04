@@ -22,6 +22,7 @@ class CoinsListDataSource @Inject constructor(private val db: CoinsDatabase) {
         project?.let {
             val coinsListEntity = CoinsListEntity(
                 it.symbol,
+                it.id,
                 it.name,
                 it.price,
                 it.changePercent,

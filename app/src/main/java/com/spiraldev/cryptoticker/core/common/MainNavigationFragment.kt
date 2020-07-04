@@ -1,11 +1,10 @@
-package com.spiraldev.cryptoticker.ui
+package com.spiraldev.cryptoticker.core.common
 
 import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import com.spiraldev.cryptoticker.R
-import com.spiraldev.cryptoticker.core.common.BaseFragment
 
 
 //Interface to update the toolbar with the activity
@@ -36,7 +35,6 @@ abstract class MainNavigationFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         val host = navigationHost ?: return
 
-        //get the toolbar from the fragment view
         val mainToolbar: Toolbar = view.findViewById(R.id.toolbar) ?: return
         mainToolbar.apply {
             host.registerToolbarWithNavigation(this)

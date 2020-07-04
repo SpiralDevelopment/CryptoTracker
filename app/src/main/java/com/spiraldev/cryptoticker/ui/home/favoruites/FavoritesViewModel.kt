@@ -1,4 +1,4 @@
-package com.spiraldev.cryptoticker.ui.favoruites
+package com.spiraldev.cryptoticker.ui.home.favoruites
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

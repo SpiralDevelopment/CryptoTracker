@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.spiraldev.cryptoticker.ui.projectProfile.ProjectProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/projectProfileMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.Custom.Toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/coinItemImageView"
+            android:layout_width="@dimen/cardview_image_width"
+            android:layout_height="@dimen/cardview_image_height"
+            android:layout_marginStart="@dimen/large_start_margin"
+            android:layout_marginTop="@dimen/large_top_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/coinItemNameTextView"
+            style="@style/TextAppearance.Custom.Default.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_start_margin"
+            android:layout_marginEnd="@dimen/default_start_margin"
+            android:ellipsize="end"
+            android:gravity="start"
+            app:layout_constraintEnd_toStartOf="@id/coinItemPriceTextView"
+            app:layout_constraintStart_toEndOf="@id/coinItemImageView"
+            app:layout_constraintTop_toTopOf="@id/coinItemImageView"
+            tools:text="Apple Inc" />
+
+        <TextView
+            android:id="@+id/coinItemSymbolTextView"
+            style="@style/TextAppearance.Custom.Default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/subtitle_text_color"
+            app:layout_constraintStart_toStartOf="@id/coinItemNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/coinItemNameTextView"
+            tools:text="APPL" />
+
+        <TextView
+            android:id="@+id/coinItemPriceTextView"
+            style="@style/TextAppearance.Custom.H2.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/large_start_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coinItemSymbolTextView"
+            app:layout_constraintTop_toTopOf="@id/coinItemImageView"
+            tools:text="123.45" />
+
+        <TextView
+            android:id="@+id/coinItemChangeTextView"
+            style="@style/TextAppearance.Custom.Default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_start_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            app:layout_constraintEnd_toEndOf="@id/coinItemPriceTextView"
+            app:layout_constraintTop_toBottomOf="@id/coinItemPriceTextView"
+            tools:drawableStart="@drawable/ic_baseline_arrow_upward_24"
+            tools:text="+123.45"
+            tools:textColor="@color/green" />
+
+        <TextView
+            android:id="@+id/lineChartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_top_margin"
+            android:gravity="center"
+            android:visibility="@{(viewModel.isLoading &amp;&amp; !viewModel.dataError) ? View.GONE : View.VISIBLE}"
+            style="@style/TextAppearance.Custom.Default.Bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coinItemChangeTextView"
+            tools:text="AMZN Price from 2019-10-21 to 2020-01-21"/>
+
+        <include layout="@layout/view_line_chart"
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/default_top_margin"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:visibility="@{(viewModel.isLoading &amp;&amp; !viewModel.dataError) ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineChartTitle" />
+
+        <ProgressBar
+            android:id="@+id/coinListLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/lineChart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/lineChart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

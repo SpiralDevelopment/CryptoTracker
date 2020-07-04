@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.spiraldev.cryptoticker.ui.settings.SettingsViewModel" />
+            type="com.spiraldev.cryptoticker.ui.home.settings.SettingsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

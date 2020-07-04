@@ -5,9 +5,9 @@
 ## Screenshots
 
 <p align="middle">
-  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc1.jpg">
-  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc2.jpg">
   <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc3.jpg">
+  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc2.jpg">
+  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc1.jpg">
   <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc4.jpg">
 </p>
 

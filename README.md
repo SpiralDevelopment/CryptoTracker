@@ -5,9 +5,10 @@
 ## Screenshots
 
 <p align="middle">
-  <img width="300" src="https://github.com/SpiralDevelopment/CryptoTicker/blob/master/screenshots/sc1.jpg">
-  <img width="300" src="https://github.com/SpiralDevelopment/CryptoTicker/blob/master/screenshots/sc2.jpg">
-  <img width="300" src="https://github.com/SpiralDevelopment/CryptoTicker/blob/master/screenshots/sc3.jpg">
+  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc3.jpg">
+  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc2.jpg">
+  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc1.jpg">
+  <img width="200" src="https://github.com/SpiralDevelopment/CryptoTracker/blob/master/screenshots/sc4.jpg">
 </p>
 
 ## Architecture
@@ -51,6 +52,6 @@ There are 2 versions of this project one uses [dagger-android][6] for dependency
 
 |     Sample     | Description |
 | ------------- | ------------- |
-| [dagger-hilt](https://github.com/SpiralDevelopment/CryptoTicker/tree/master) | Dagger Hilt version |
-| [dagger-android](https://github.com/SpiralDevelopment/CryptoTicker/tree/dagger-android) | Dagger Android version
+| [dagger-hilt](https://github.com/SpiralDevelopment/CryptoTracker/tree/master) | Dagger Hilt version |
+| [dagger-android](https://github.com/SpiralDevelopment/CryptoTracker/tree/dagger-android) | Dagger Android version
 

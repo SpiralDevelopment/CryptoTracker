@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.spiraldev.cryptoticker.ui.coinsList.CoinListViewModel" />
+            type="com.spiraldev.cryptoticker.ui.home.coinsList.CoinListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -12,14 +12,17 @@ import com.spiraldev.cryptoticker.util.UIHelper
 import com.spiraldev.cryptoticker.util.extensions.dollarString
 import com.spiraldev.cryptoticker.util.extensions.emptyIfNull
 import kotlinx.android.synthetic.main.item_coins_list.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 //listener for add to favourite and item click
 interface OnItemClickCallback {
-    fun onItemClick(symbol: String)
+    fun onItemClick(symbol: String, id: String)
     fun onFavouriteClicked(symbol: String)
 }
 
-class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) : RecyclerView.Adapter<CoinsListAdapter.CoinsListViewHolder>() {
+class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) :
+    RecyclerView.Adapter<CoinsListAdapter.CoinsListViewHolder>() {
 
     private val coinsList: ArrayList<CoinsListEntity> = arrayListOf()
 
@@ -63,7 +66,10 @@ class CoinsListAdapter(private val onItemClickCallback: OnItemClickCallback) : R
             ImageLoader.loadImage(itemView.coinsItemImageView, model.image ?: "")
 
             itemView.setOnClickListener {
-                onItemClickCallback.onItemClick(model.symbol)
+                onItemClickCallback.onItemClick(
+                    model.symbol,
+                    model.id ?: model.symbol
+                )
             }
         }
     }

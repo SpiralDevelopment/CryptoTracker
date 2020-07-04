@@ -28,6 +28,7 @@ class CoinsListRepository @Inject constructor(
                             .map { item ->
                                 CoinsListEntity(
                                     item.symbol ?: "",
+                                    item.id,
                                     item.name,
                                     item.price,
                                     item.changePercent,
@@ -39,7 +40,6 @@ class CoinsListRepository @Inject constructor(
 
                     coinsListDataSource.insertCoinsIntoDB(customStockList)
 
-                    //store success state in preference storage
                     preferenceStorage.timeLoadedAt = Date().time
 
                     Result.Success(true)

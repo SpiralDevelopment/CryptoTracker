@@ -1,4 +1,4 @@
-package com.spiraldev.cryptoticker.ui.coinsList
+package com.spiraldev.cryptoticker.ui.home.coinsList
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

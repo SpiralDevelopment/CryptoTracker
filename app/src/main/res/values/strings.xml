@@ -12,4 +12,7 @@
     <string name="no_favourites">You have not set any favourites</string>
     <string name="added_to_favourite">%1$s added to favourite</string>
     <string name="removed_to_favourite">%1$s removed from favourite</string>
+
+    <string name="historical_data_error">Couldn\'t fetch historical data. Please try again</string>
+    <string name="line_chart_title">Price Chart for %1$s days\n(x-axis: Date, y-axis: Price in $)</string>
 </resources>

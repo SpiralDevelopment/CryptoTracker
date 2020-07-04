@@ -1,25 +1,22 @@
-package com.spiraldev.cryptoticker.ui.favoruites
+package com.spiraldev.cryptoticker.ui.home.favoruites
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.spiraldev.cryptoticker.R
 import com.spiraldev.cryptoticker.adapters.CoinsListAdapter
 import com.spiraldev.cryptoticker.adapters.OnItemClickCallback
-import com.spiraldev.cryptoticker.core.common.BaseFragment
 import com.spiraldev.cryptoticker.databinding.FragmentFavoritesBinding
-import com.spiraldev.cryptoticker.databinding.FragmentListBinding
-import com.spiraldev.cryptoticker.ui.MainNavigationFragment
-import com.spiraldev.cryptoticker.ui.coinsList.CoinListViewModel
+import com.spiraldev.cryptoticker.core.common.MainNavigationFragment
+import com.spiraldev.cryptoticker.ui.projectProfile.ProjectProfileActivity
+import com.spiraldev.cryptoticker.util.Constants
 import com.spiraldev.cryptoticker.util.extensions.doOnChange
 import kotlinx.android.synthetic.main.fragment_favorites.*
-import kotlinx.android.synthetic.main.fragment_list.*
+import com.spiraldev.cryptoticker.ui.home.favoruites.FavoritesViewModel
 
 
 class FavoritesFragment : MainNavigationFragment(), OnItemClickCallback {
@@ -69,12 +66,23 @@ class FavoritesFragment : MainNavigationFragment(), OnItemClickCallback {
 
         viewModel.favouriteStock.doOnChange(this) {
             showToast(
-                getString(if (it.isFavourite) R.string.added_to_favourite else R.string.removed_to_favourite).format(it.symbol)
+                getString(if (it.isFavourite) R.string.added_to_favourite else R.string.removed_to_favourite).format(
+                    it.symbol
+                )
             )
         }
     }
 
-    override fun onItemClick(symbol: String) {
+    override fun onItemClick(symbol: String, id: String) {
+        requireActivity().run {
+            startActivity(
+                Intent(this, ProjectProfileActivity::class.java)
+                    .apply {
+                        putExtra(Constants.EXTRA_SYMBOL, symbol)
+                        putExtra(Constants.EXTRA_SYMBOL_ID, id)
+                    }
+            )
+        }
 
     }
 

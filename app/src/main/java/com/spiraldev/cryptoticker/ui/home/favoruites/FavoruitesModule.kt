@@ -1,4 +1,4 @@
-package com.spiraldev.cryptoticker.ui.coinsList
+package com.spiraldev.cryptoticker.ui.home.favoruites
 
 import androidx.lifecycle.ViewModel
 import com.spiraldev.cryptoticker.core.di.annotations.FragmentScope
@@ -8,16 +8,15 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.multibindings.IntoMap
 
-
 @Module
-abstract class CoinListModule {
+abstract class FavouritesModule {
 
     @FragmentScope
     @ContributesAndroidInjector
-    abstract fun contributeCoinListFragment(): CoinListFragment
+    abstract fun contributeFavouritesFragment(): FavoritesFragment
 
     @Binds
     @IntoMap
-    @ViewModelKey(CoinListViewModel::class)
-    abstract fun bindCoinListViewModel(viewModel: CoinListViewModel): ViewModel
+    @ViewModelKey(FavoritesViewModel::class)
+    abstract fun bindFavouritesViewModel(viewModel: FavoritesViewModel): ViewModel
 }

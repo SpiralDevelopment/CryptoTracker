@@ -1,4 +1,4 @@
-package com.spiraldev.cryptoticker.ui.settings
+package com.spiraldev.cryptoticker.ui.home.settings
 
 import androidx.lifecycle.ViewModel
 import com.spiraldev.cryptoticker.core.di.annotations.FragmentScope

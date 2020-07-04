@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/navigation_coins_list"
-        android:name="com.spiraldev.cryptoticker.ui.coinsList.CoinListFragment"
-        android:label="Coins List"
+        android:name="com.spiraldev.cryptoticker.ui.home.coinsList.CoinListFragment"
+        android:label="All Coins"
         tools:layout="@layout/fragment_list" />
     <fragment
         android:id="@+id/navigation_favourites"
-        android:name="com.spiraldev.cryptoticker.ui.favoruites.FavoritesFragment"
+        android:name="com.spiraldev.cryptoticker.ui.home.favoruites.FavoritesFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.spiraldev.cryptoticker.ui.settings.SettingsFragment"
+        android:name="com.spiraldev.cryptoticker.ui.home.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

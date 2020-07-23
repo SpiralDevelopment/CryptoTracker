@@ -55,3 +55,14 @@ There are 2 versions of this project. One uses [dagger-android][6] for dependenc
 | [dagger-hilt](https://github.com/SpiralDevelopment/CryptoTracker/tree/master) | Dagger Hilt version |
 | [dagger-android](https://github.com/SpiralDevelopment/CryptoTracker/tree/dagger-android) | Dagger Android version
 
+
+## Support
+
+If you like my work, feel free to support it!
+
+* **BTC:** 1PUGs6mxcW2W3SJi95aG8GvRQRJsoFHWWQ
+
+* **ETH:** 0x66615e09f7f46429e7620ffbf78479879bbab41d
+
+* **LTC:** LRxYMgEXMumwxYdimZo9EJ5CfBcipD5c3n
+

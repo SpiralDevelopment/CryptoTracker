@@ -3,6 +3,7 @@
     <color name="transparent">#0fff</color>
     <color name="default_text_color">#ffffff</color>
     <color name="window_background">#212121</color>
+    <color name="card_view_background">#262626</color>
 
     <color name="line_chart_text_color">#ffffff</color>
     <color name="line_chart_color">#4fc3f7</color>
